@@ -21,7 +21,6 @@ const createDir = () => {
 const getFiles = () => {
   const sourceFiles = fs.readdirSync(sourceDir)
   const outputFiles = fs.readdirSync(outputDir)
-  console.log(process.argv)
   return process.argv.length >= 3 && process.argv[2] === '--override'
     ? sourceFiles
     : sourceFiles.filter(x => !outputFiles.find(y => y === x.replace('.flf', '.json')))
